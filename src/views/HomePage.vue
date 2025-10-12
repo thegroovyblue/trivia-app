@@ -15,7 +15,7 @@ onMounted(async () => {
   <div class="grid flex-grow grid-cols-4 gap-12 m-20">
     <RouterLink v-for="category in categories" 
     :key="category.id"
-    :to="''"
+    :to="' /question/category/${category.id}'"
     class="bg-blue-950 text-center flex h-32 items-center justify-center rounded-lg border-4 border-black py-4 font-bold uppercase hover:cursor-pointer hover:border-red-600 hover:bg bg-red-900 hover:text-white transition-colors duration-300ms"
     >
       {{ category.name }}
