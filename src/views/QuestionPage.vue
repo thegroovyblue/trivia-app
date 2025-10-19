@@ -46,17 +46,25 @@ return array
 
 <template>
 
-<div v-if="question" class="">
-  <BaseTitle>{{ question. category }}</BaseTitle>
-{{ question.question }}
+  <div v-if="question" class="flex h-full w-full flex-col items-center gap-8 p-10">
+   <BaseTitle>{{ question.category }}</BaseTitle>
+      <!--{{ question.question }} -->
 
-  <div v-for="answer in answers" v-html="answer. answer" :key="answer. id" class=""></div>
-</div>
-<div v-else class="">
-  Loading .. .
-</div>
+    <div v-html="question.question" class="text-center text-2xl font-bold"></div>
+    <div class="grid w-full flex-grow grid-cols-2 gap-8">
+     <div v-for="answer in answers" 
+     v-html="answer.answer" 
+     :key="answer.id" 
+     class=" bg-red-600 flex items-center justify-center text-4xl rounded-lg text-white py-10 px-2">
+     </div>
 
-</template>
+    </div>
+  </div>
+  <div v-else class="">
+   Loading .. .
+  </div>
+
+  </template>
 
 
 
