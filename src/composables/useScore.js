@@ -2,7 +2,7 @@ import { ref } from 'vue'
 
 const score = ref(0)
 
-const useScore = () => {
+export function useScore() {
     const changeScore = (value) => {
         score.value += value
     }
