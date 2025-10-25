@@ -9,6 +9,9 @@ const { categories, getCategories } = useAPI()
 onMounted(async () => {
   await getCategories()
 })
+
+
+
 </script>
 
 <template>
@@ -22,5 +25,12 @@ onMounted(async () => {
       {{ category.name }}
     </RouterLink>
   </div>
-
+<RouterLink
+  v-for="category in categories"
+  :key="category.id"
+  :to="{ name: 'questionByCategory', params: { id: category.id } }"
+  class="bg-blue-950 text-center flex h-32 items-center justify-center rounded-lg border-4 border-black py-4 font-bold uppercase hover:cursor-pointer hover:border-red-600 hover:bg-red-900 hover:text-white transition-colors duration-300"
+>
+  {{ category.name }}
+</RouterLink>
 </template>
